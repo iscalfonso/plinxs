@@ -1,0 +1,7 @@
+<?php 
+
+/**
+ *
+ * PlinXS Framework
+ * 
+ */
