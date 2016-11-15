@@ -1,4 +1,10 @@
 {
+    "autoload": {
+        "classmap": ["core/", "app/"],
+        "files": [
+            "app/helpers/dev.php"
+        ]
+    },
     "require": {
         "fzaninotto/faker": "^1.6"
     }
