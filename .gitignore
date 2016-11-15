@@ -1,2 +1,4 @@
 /vendor
 .htaccess
+/config/app.php
+/config/database.php
