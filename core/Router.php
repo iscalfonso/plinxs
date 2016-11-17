@@ -1,5 +1,16 @@
 <?php 
 
+/**
+ *
+ * PlinXS Framework
+ *
+ * @author Alfonso Jimenez Cruz
+ * @license MIT
+ * @license https://opensource.org/licenses/MIT
+ * @version 0.1.0
+ * 
+ */
+
 namespace Core;
 
 class Router 
@@ -14,8 +25,9 @@ class Router
 
     public static function load($file)
     {
+        $route = new static;
         require $file;
-        return new static;
+        return $route;
     }
 
     public function run($uri, $request)

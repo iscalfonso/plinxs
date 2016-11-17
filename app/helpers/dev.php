@@ -1,15 +1,23 @@
 <?php 
 
 /**
- *  
- *  Set of function for develop apps
- *  PlinXS Framework
- *  
+ *
+ * PlinXS Framework
+ *
+ * @author Alfonso Jimenez Cruz
+ * @license MIT
+ * @license https://opensource.org/licenses/MIT
+ * @version 0.1.0
+ * 
  */
 
 /**
  * Print of the send variable formatted and
  * other relevant information 
+ *
+ * @param any $var
+ * @param bool $with_type
+ * @return null
  */
 if(!function_exists('dd')){
     function dd($var, $with_type)
@@ -44,7 +52,10 @@ if(!function_exists('dd')){
 /**
  *
  * Select of type print
- * 
+ *
+ * @param any $var
+ * @param bool $with_type
+ * @return null
  */
 if(!function_exists('print_array_by')){
     function print_array_by($var, $with_type)
@@ -60,6 +71,8 @@ if(!function_exists('print_array_by')){
 /**
  *
  * Current directory
+ *
+ * @return null
  * 
  */
 if(!function_exists('curr_dir')){
@@ -72,6 +85,8 @@ if(!function_exists('curr_dir')){
 /**
  *
  * Current file
+ *
+ * @return null
  * 
  */
 if(!function_exists('curr_file')){
@@ -81,7 +96,15 @@ if(!function_exists('curr_file')){
     }
 }
 
-
+/**
+ * Print the titles of the variable send
+ *
+ * @param string $color
+ * @param string $text
+ * @param any $var
+ * @param bool $with_type
+ * @return null
+ */
 if(!function_exists('titles')){
     function titles($color, $text, $var, $with_type)
     {
