@@ -32,29 +32,38 @@ class Router
 
     public function run($uri, $request)
     {
-        if(!array_key_exists($uri, $this->httpRoutes[$request]))
+        if(!array_key_exists($uri, $this->httpRoutes[$request])){
             throw new Exception("Bad Route");
-        return $this->httpRoutes[$request][$uri];
-            
+        }
+        return $this->extractControllerMethod($this->httpRoutes[$request][$uri]);
     }
 
-    public function get($uri, $controller)
+    public function get($uri, $controllerMethod)
     {
-        $this->httpRoutes['GET'][$uri] = $controller;
+        $this->httpRoutes['GET'][$uri] = $controllerMethod;
     }
 
-    public function post($uri, $controller)
+    public function post($uri, $controllerMethod)
     {
-        $this->httpRoutes['POST'][$uri] = $controller;
+        $this->httpRoutes['POST'][$uri] = $controllerMethod;
     }
 
-    public function put($uri, $controller)
+    public function put($uri, $controllerMethod)
     {
-        $this->httpRoutes['PUT'][$uri] = $controller;
+        $this->httpRoutes['PUT'][$uri] = $controllerMethod;
     }
 
-    public function delete($uri, $controller)
+    public function delete($uri, $controllerMethod)
     {
-        $this->httpRoutes['DELETE'][$uri] = $controller;
+        $this->httpRoutes['DELETE'][$uri] = $controllerMethod;
+    }
+
+    private function extractControllerMethod($controllerMethod)
+    {
+        $data = explode('@', $controllerMethod);
+        return [
+            'controller'    => $data[0],
+            'method'        => $data[1],
+        ];
     }
 }

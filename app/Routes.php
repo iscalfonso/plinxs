@@ -11,4 +11,5 @@
  * 
  */
 
-$route->get('', 'welcome');
+$route->get('', 'welcome@index');
+$route->get('welcome/asd', 'welcome@list');

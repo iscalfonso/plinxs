@@ -17,7 +17,6 @@ class Request
 {
     public static function uri()
     {
-        dd(trim(parse_url($controller, PHP_URL_PATH), '/'));exit();
         return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
     }
 
